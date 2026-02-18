@@ -23,6 +23,8 @@ All commands are run from the root of the project, from a terminal:
 
 ## Developing Locally
 
+I'd recommend going over this: https://gist.github.com/cwsmith-160/e9c8ca80f23027f0495775aed77ec780 to get started on Windows. (Works so far.) As well as installing Git from the commandline.
+
 | Prerequisites                                                                |
 | :--------------------------------------------------------------------------- |
 | [Node.js](https://nodejs.org/) v18.20.8+.                                    |

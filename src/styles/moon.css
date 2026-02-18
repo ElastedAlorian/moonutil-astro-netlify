@@ -1,0 +1,31 @@
+/* Website ackground colors. Temporarily for left-to-right.*/
+body {;
+background-color: red; /* For browsers that do not support gradients */
+background-image: linear-gradient(to right, red, yellow);
+}
+
+--text-5xl: 3rem;
+--text-5xl--line-height: 1;
+
+.btn {
+    font-style: italic;
+
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+    &:hover {
+
+    }
+    &:disabled {
+
+    }
+}
+
+.btn-lg {
+    --btn-font-size: 1.125rem;
+    --btn-px: 1.5rem;
+    --btn-py: 1.125rem;
+}
