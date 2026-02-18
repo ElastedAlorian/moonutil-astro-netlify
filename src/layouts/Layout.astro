@@ -1,10 +1,10 @@
 ---
-import '../../src/styles/moon.css';
-/*import '../../src/styles/globals.css';*/
-import '@fontsource-variable/inter/wght.css';
+/*import '../../src/styles/globals.css';
+import '@fontsource-variable/inter/wght.css';*/
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../../src/styles/moon.css';
 
 
 interface Props {
@@ -21,6 +21,7 @@ const { title } = Astro.props;
         <title>MoonUtils</title>
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        <link href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap' rel='stylesheet' type='text/css'>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
     </head>

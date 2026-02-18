@@ -1,31 +1,82 @@
-/* Website ackground colors. Temporarily for left-to-right.*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap');  /*DM Sans Font */
+
+/* Website background colors. Temporarily for left-to-right.*/
 body {;
-background-color: red; /* For browsers that do not support gradients */
-background-image: linear-gradient(to right, red, yellow);
+background-color: violet; /* For browsers that do not support gradients */
+background-image: linear-gradient(to right, white, violet);
+}
+.header {;
+    background-color: white;
+    background-image: linear-gradient(to left, white, violet);
+    /*padding: 60px;*/
+    text-align: center;
 }
 
---text-5xl: 3rem;
---text-5xl--line-height: 1;
-
-.btn {
-    font-style: italic;
-
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
-    &:hover {
-
-    }
-    &:disabled {
-
-    }
+/* Text*/
+h1{
+    font-family: 'Cal Sans';
+    letter-spacing: 1px;
+}
+p{
+    font-family: 'DM Sans';
+}
+.header-text{
+    font-family: 'Cal Sans';
+    letter-spacing: 1px;
 }
 
-.btn-lg {
-    --btn-font-size: 1.125rem;
-    --btn-px: 1.5rem;
-    --btn-py: 1.125rem;
+/* Glass Efffect Button */
+        .button {
+            background-color: #FFFFFF;
+            border: none;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .glass-effect {
+            font-style: bold;
+            color: black;
+            background: #CCFFFF;
+            background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+
+            &:hover {
+                background: #CCFFFF;
+                background: linear-gradient(180deg, rgba(204, 255, 255, 0.5) 0%, rgba(255, 204, 255, 0.75) 100%);
+            }
+            &:disabled {
+                background: rgba(255, 255, 255, 0.2);
+            }
+        }
+        .btn-lg {
+            --btn-font-size: 1.125rem;
+            --btn-px: 1.5rem;
+            --btn-py: 1.125rem;
+        }
+/* */
+
+
+/* Fonts */
+@font-face {
+    font-family: 'Cal Sans'; /* iiSU Workshop CSS Code lol */
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+    src: url(https://cdn.jsdelivr.net/fontsource/fonts/cal-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/cal-sans@latest/latin-400-normal.woff) format('woff');
+    unicode-range: U +0000 -00FF, U +0131, U +0152 -0153, U +02BB -02BC, U +02C6, U +02DA, U +02DC, U +0304, U +0308, U +0329, U +2000 -206F, U +20AC, U +2122, U +2191, U +2193, U +2212, U +2215, U + FEFF, U + FFFD;
+}
+
+@font-face { /*                                      / */
+    font-family: DM Sans;
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
 }
