@@ -10,12 +10,27 @@ const navItems = [
 ];
 ---
 
-<nav class="header">
+<div class="header">
     <a href="/">
-        <Logo />
+        <!--<Logo />
+        <a id="logo" title="MoonUtil" href="/"  imageurl="/logo.png"></a>-->
+        <img src="logo_transparent.png" alt="Italian Trulli" width="300" height="100">
     </a>
-    <p class="header-text">My supercool header</p> <p class="header-text">My supercool header</p>
-    <!--{
+    <div id="Navigation">
+        <span><a class="header-text" href="/">Home</a></span>
+            <span><a class="header-seperator">&nbsp;/&nbsp;</a></span>
+        <span><a class="header-text" href="/revalidation">Word Count</a></span>
+            <span><a class="header-seperator">&nbsp;|&nbsp;</a></span>
+        <span><a class="header-text" href="/image-cdn">Times Around the World</a></span>
+            <span><a class="header-seperator">&nbsp;\&nbsp;</a></span>
+        <span><a class="header-text" href="/blobs" target="_blank">Help</a></span>
+            <span></span>
+
+            <p></p>
+    </div>
+
+     <!--<p class="header-text">My supercool header</p> <p class="header-text">My supercool header</p>
+   {
         !!navItems?.length && (
             <ul class="flex flex-wrap gap-x-4 gap-y-1">
                 {navItems.map((item) => (
@@ -28,4 +43,4 @@ const navItems = [
             </ul>
         )
     }-->
-</nav>
+</div>

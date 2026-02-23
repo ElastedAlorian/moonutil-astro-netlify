@@ -1,82 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap');  /*DM Sans Font */
+ /* References:
+  * https://cssgradient.io
+  * https://www.w3schools.com/colors/colors_names.asp
+  *
+  *
+  * REORGANIZE THIS PLASE
+  *
+  */
+ :root {
+     color-scheme: light dark; /* SETTING THE THEME TO DARK MODE ON VIVALDI DOESN'T AUTOMATICALLY MAKE THE PAGE DARK TOO LOL */
+     --color-lime-600: #86efac;
+     --color-lime-700: #219c4d;
+     --color-black: #000000;
+     --color-dark-purple: #37006F;
+     /* For reference. */
+     --iisu-gradient-1: rgba(139, 48, 237, 1);
+     --iisu-gradient-2: rgba(78, 87, 250, 1);
+     --iisu-gradient-3: rgba(69, 189, 250, 1);
+     --iisu-gradient: --iisu-gradient: linear-gradient(45deg, var(--iisu-gradient-1), var(--iisu-gradient-2), var(--iisu-gradient-3));
+     --iisu-gradient-135: linear-gradient(135deg, var(--iisu-gradient-1), var(--iisu-gradient-2), var(--iisu-gradient-3));
+ }
 
-/* Website background colors. Temporarily for left-to-right.*/
-body {;
-background-color: violet; /* For browsers that do not support gradients */
-background-image: linear-gradient(to right, white, violet);
-}
-.header {;
-    background-color: white;
-    background-image: linear-gradient(to left, white, violet);
-    /*padding: 60px;*/
-    text-align: center;
+ main {
+     display: block;
+     unicode-bidi: isolate;
+ }
+
+ #f-container{ /* THANK THIS FOR EXISTANG https://github.com/PetoKrisa/frutiger-aero-css/blob/main/frutiger-aero.css */
+ width: 960px;
+ margin: auto;
+ padding: calc(var(--spacing) * 5);
+ }
+
+ .f-content{
+     padding: 20px 20px 20px 20px;
+     font-size: large;
+     background: #ffffff;
+     background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.5) 100%);
+     /*border-radius: 10 10 10px 10px;*/
+    box-shadow: inset 0px -10px 30px 15px rgba(255, 255, 255, 0.5);
+     border-radius: 16px;
+ }
+
+ /* Website background colors. Temporarily for left-to-right.*/
+ body {
+     /*background-color: violet;  For browsers that do not support gradients */
+     /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(55, 0, 111, 1) 100%);*/
+
+     /* I do not know why I can't save a gradient as a variable nor use variables in the gradients. NEVERMIND I CAN USE var() LOL I FORGOT*/
+     @media (prefers-color-scheme: dark){
+         background: #000000;
+         /*background: linear-gradient(180deg, #000000 0%, #37006F 100%);*/
+         background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);
+       }
+       @media (prefers-color-scheme: light){
+           background: #ECCFFF;
+           background: linear-gradient(0deg,rgba(236, 207, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+       }
+     margin: 0px; /* Without this, it creates an 8px barrier around it. Not ideal as it ruins the gradient looking smooth! */
+ }
+
+ .header {;
+     background: #37006F;
+     background: linear-gradient(180deg,rgba(55, 0, 111, 1) 0%, rgba(55, 0, 111, 0) 100%);
+     text-align: center;
+     @media (prefers-color-scheme: light){
+         background: #9000ff;
+         background: linear-gradient(180deg,rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 1) 59%, rgba(144, 0, 255, 0) 100%);
+     }
+ }
+
+footer{
+     background: #9277d1;
+     background: linear-gradient(180deg, rgba(146, 119, 209, 1) 0%, rgba(55, 0, 111, 1) 100%);
+     text-align: center;
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     height: 96px;
 }
 
-/* Text*/
-h1{
-    font-family: 'Cal Sans';
-    letter-spacing: 1px;
-}
-p{
-    font-family: 'DM Sans';
-}
-.header-text{
-    font-family: 'Cal Sans';
-    letter-spacing: 1px;
-}
+ /* Text*/
+ h1{
+     font-family: 'Cal Sans';
+     letter-spacing: 1px;
+      font-style: bold;
+ }
+ h2{
+     font-family: 'DM Sans';
+      font-style: bold;
+ }
+ h3{
+     font-family: "Didact Gothic";
+      font-style: bold;
+ }
+ p{
+     font-family: "Didact Gothic";
+ }
 
-/* Glass Efffect Button */
-        .button {
-            background-color: #FFFFFF;
-            border: none;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-        }
-        .glass-effect {
-            font-style: bold;
-            color: black;
-            background: #CCFFFF;
-            background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+ /* Link text. */
+ a:link{
+     color: transparent;
+     background: linear-gradient(0deg,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+     background-clip: text;
+     /* Make bottom gradient color lighter for dark mode.*/
+ }
+ a:visited{
+     color:grey;
+ }
+ a:hover{
+    background: linear-gradient(0deg,rgba(63, 195, 251, 1) 0%, rgba(70, 252, 106, 1) 100%);
+    color: transparent;
+    background-clip: text;
+ }
+ a:active{
+     color:cyan;
+ }
 
-            &:hover {
-                background: #CCFFFF;
-                background: linear-gradient(180deg, rgba(204, 255, 255, 0.5) 0%, rgba(255, 204, 255, 0.75) 100%);
-            }
-            &:disabled {
-                background: rgba(255, 255, 255, 0.2);
-            }
-        }
-        .btn-lg {
-            --btn-font-size: 1.125rem;
-            --btn-px: 1.5rem;
-            --btn-py: 1.125rem;
-        }
-/* */
+ a.header-text{
+     font-family: 'Cal Sans';
+     letter-spacing: 1px;
+     color: light-dark(black, white);
+     text-decoration: none;
+ }
+ a.header-seperator{
+     font-family: 'Cal Sans';
+     color: light-dark(gainsboro, dimgrey);
+ }
 
 
-/* Fonts */
-@font-face {
-    font-family: 'Cal Sans'; /* iiSU Workshop CSS Code lol */
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-    src: url(https://cdn.jsdelivr.net/fontsource/fonts/cal-sans@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/cal-sans@latest/latin-400-normal.woff) format('woff');
-    unicode-range: U +0000 -00FF, U +0131, U +0152 -0153, U +02BB -02BC, U +02C6, U +02DA, U +02DC, U +0304, U +0308, U +0329, U +2000 -206F, U +20AC, U +2122, U +2191, U +2193, U +2212, U +2215, U + FEFF, U + FFFD;
-}
+ /* Glass Efffect Button */
+ .button {
+     font-family: 'Cal Sans';
+     background-color: #FFFFFF;
+     border: none;
+     padding: 15px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
 
-@font-face { /*                                      / */
-    font-family: DM Sans;
-    font-style: normal;
-    font-display: swap;
-    font-weight: 400;
-}
+ }
+ a.glass-effect { /* Retain the    `a.`     at the start of the line so it doesn't get overwritten by the configuration above for text colors.*/
+     font-style: bold;
+     /*color: black;*/
+     color: light-dark(BLACK, WHITE);
+     background: #CCFFFF;
+     background: linear-gradient(180deg, rgba(204, 255, 255, 0.5) 0%, rgba(255, 204, 255, 0.75) 100%);
+     backdrop-filter: blur(10px);
+     -webkit-backdrop-filter: blur(10px);
+     border-radius: 16px;
+     border: 1px solid rgba(255, 255, 255, 0.3);
+     box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+     &:hover {
+         background: #CCFFFF;
+         background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
+         color: light-dark(WHITE, BLACK)
+     }
+     &:disabled {
+         background: #a17588;
+         background: linear-gradient(0deg, rgba(161, 117, 136, 0) 0%, rgba(148, 187, 233, 0.65) 100%);
+     }
+ }
+
+ /* Fonts */
+ @font-face {
+     font-family: "Cal Sans", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+ }
+
+ @font-face {
+     font-family: "DM Sans";
+     font-style: normal;
+     font-display: swap;
+     font-weight: 400;
+ }
+
+ @font-face{
+     font-family: "Didact Gothic", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+ }

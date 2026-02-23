@@ -1,6 +1,4 @@
 ---
-/*import '../../src/styles/globals.css';
-import '@fontsource-variable/inter/wght.css';*/
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -18,20 +16,28 @@ const { title } = Astro.props;
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>MoonUtils</title>
+        <title>MoonUtil - Utility Site</title>
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <link href='https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600&display=swap' rel='stylesheet' type='text/css'>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.png" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet"> <!-- Pure guessing -->
+
     </head>
+    <Header />
     <body>
-        <div >
-            <div>
-                <Header />
-                <main class="grow"><slot /></main>
-                <Footer />
+        <content>
+            <div  id="f-container">
+                <div class="f-content">
+                    <main class="grow"><slot /></main>
+                </div>
             </div>
-        </div>
+        </content>
     </body>
+    <Footer />
 </html>
