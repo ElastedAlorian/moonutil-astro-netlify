@@ -3,11 +3,11 @@
   * https://www.w3schools.com/colors/colors_names.asp
   *
   *
-  * REORGANIZE THIS PLASE
+  * REORGANIZED?
   *
   */
- :root {
-     color-scheme: light dark; /* SETTING THE THEME TO DARK MODE ON VIVALDI DOESN'T AUTOMATICALLY MAKE THE PAGE DARK TOO LOL */
+ :root { /* Variables. Underutilized. */
+     color-scheme: light dark;
      --color-lime-600: #86efac;
      --color-lime-700: #219c4d;
      --color-black: #000000;
@@ -20,45 +20,25 @@
      --iisu-gradient-135: linear-gradient(135deg, var(--iisu-gradient-1), var(--iisu-gradient-2), var(--iisu-gradient-3));
  }
 
- main {
-     display: block;
-     unicode-bidi: isolate;
- }
 
  #f-container{ /* THANK THIS FOR EXISTANG https://github.com/PetoKrisa/frutiger-aero-css/blob/main/frutiger-aero.css */
+ /* Center piece. */
  width: 960px;
  margin: auto;
- padding: calc(var(--spacing) * 5);
+ padding-bottom: 150px;
+
  }
 
  .f-content{
-     padding: 20px 20px 20px 20px;
+     padding: 30px 30px 50px 30px; /* Inside */
      font-size: large;
      background: #ffffff;
      background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.5) 100%);
-     /*border-radius: 10 10 10px 10px;*/
-    box-shadow: inset 0px -10px 30px 15px rgba(255, 255, 255, 0.5);
-     border-radius: 16px;
+     box-shadow: inset 0px -10px 30px 15px rgba(255, 255, 255, 0.5);
+     border-radius: 16px; /* Rounded corners. */
  }
 
- /* Website background colors. Temporarily for left-to-right.*/
- body {
-     /*background-color: violet;  For browsers that do not support gradients */
-     /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(55, 0, 111, 1) 100%);*/
-
-     /* I do not know why I can't save a gradient as a variable nor use variables in the gradients. NEVERMIND I CAN USE var() LOL I FORGOT*/
-     @media (prefers-color-scheme: dark){
-         background: #000000;
-         /*background: linear-gradient(180deg, #000000 0%, #37006F 100%);*/
-         background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);
-       }
-       @media (prefers-color-scheme: light){
-           background: #ECCFFF;
-           background: linear-gradient(0deg,rgba(236, 207, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-       }
-     margin: 0px; /* Without this, it creates an 8px barrier around it. Not ideal as it ruins the gradient looking smooth! */
- }
-
+ /* -- Website background colors. -- */
  .header {;
      background: #37006F;
      background: linear-gradient(180deg,rgba(55, 0, 111, 1) 0%, rgba(55, 0, 111, 0) 100%);
@@ -68,7 +48,18 @@
          background: linear-gradient(180deg,rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 1) 59%, rgba(144, 0, 255, 0) 100%);
      }
  }
-
+ body {
+     /* I do not know why I can't save a gradient as a variable nor use variables in the gradients. NEVERMIND I CAN USE var() LOL I FORGOT*/
+     @media (prefers-color-scheme: dark){
+         background: #000000;
+         background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);
+       }
+       @media (prefers-color-scheme: light){
+           background: #ECCFFF;
+           background: linear-gradient(0deg,rgba(236, 207, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+       }
+     margin: 0px; /* Without this, it creates an 8px barrier around it. Not ideal as it ruins the gradient looking smooth! */
+ }
 footer{
      background: #9277d1;
      background: linear-gradient(180deg, rgba(146, 119, 209, 1) 0%, rgba(55, 0, 111, 1) 100%);
@@ -78,109 +69,116 @@ footer{
      bottom: 0;
      width: 100%;
      height: 96px;
+        /*  Footer URL text.*/
+        a:link{
+            font-style: bold;
+            color: transparent;
+            background: #FC466B;
+            background: linear-gradient(0deg, rgba(252, 140, 107, 1) 0%, rgba(224, 250, 255, 1) 100%);
+            background-clip: text;
+            font-family: 'Cal Sans';
+        }
+        a:hover{
+            font-style: bold;
+            background: linear-gradient(0deg,rgba(163, 265, 251, 1) 0%, rgba(150, 252, 212, 1) 100%);
+            color: transparent;
+            background-clip: text;
+        }
+     p{ /* Just so that the font work. */
+         font-style: bold;
+         color:white; /* Standard text. */
+         font-family: 'DM Sans';
+     }
 }
+
 
  /* Text*/
  h1{
      font-family: 'Cal Sans';
-     letter-spacing: 1px;
+     letter-spacing: 3px;
       font-style: bold;
  }
  h2{
      font-family: 'DM Sans';
+     letter-spacing: 1px;
       font-style: bold;
  }
  h3{
      font-family: "Didact Gothic";
+     letter-spacing: 0.5px;
       font-style: bold;
- }
- p{
-     font-family: "Didact Gothic";
  }
 
  /* Link text. */
- a:link{
-     color: transparent;
-     background: linear-gradient(0deg,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
-     background-clip: text;
-     /* Make bottom gradient color lighter for dark mode.*/
- }
- a:visited{
-     color:grey;
- }
- a:hover{
-    background: linear-gradient(0deg,rgba(63, 195, 251, 1) 0%, rgba(70, 252, 106, 1) 100%);
-    color: transparent;
-    background-clip: text;
- }
- a:active{
-     color:cyan;
- }
+        a:link{
+            font-style: bold;
+            color: transparent;
+            background: #FC466B;
+            background: linear-gradient(0deg,rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+            @media (prefers-color-scheme: dark){background: linear-gradient(0deg, rgba(252, 70, 107, 1) 0%, rgba(224, 171, 255, 1) 100%);}
+            background-clip: text;
+             /*Make bottom gradient color lighter for dark mode.*/
+        }
+        a:visited{
+            color:grey;
+        }
+        a:hover{
+            background: linear-gradient(0deg,rgba(63, 195, 251, 1) 0%, rgba(70, 252, 106, 1) 100%);
+            color: transparent;
+            background-clip: text;
+        }
+        a:active{
+            color:cyan;
+        }
 
- a.header-text{
-     font-family: 'Cal Sans';
-     letter-spacing: 1px;
-     color: light-dark(black, white);
-     text-decoration: none;
- }
- a.header-seperator{
-     font-family: 'Cal Sans';
-     color: light-dark(gainsboro, dimgrey);
- }
+        a.header-text{
+            font-family: 'Cal Sans';
+            letter-spacing: 1px;
+            color: light-dark(black, white);
+            text-decoration: none;
+        }
+        a.header-seperator{
+            font-family: 'Cal Sans';
+            color: light-dark(gainsboro, dimgrey);
+        }
 
+/*
+ *  Website
+ *  Elements
+ */
 
  /* Glass Efffect Button */
- .button {
-     font-family: 'Cal Sans';
-     background-color: #FFFFFF;
-     border: none;
-     padding: 15px 32px;
-     text-align: center;
-     text-decoration: none;
-     display: inline-block;
-     font-size: 16px;
-     margin: 4px 2px;
-     cursor: pointer;
+    .button {
+        font-family: 'Cal Sans';
+        background-color: #FFFFFF;
+        border: none;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
 
- }
- a.glass-effect { /* Retain the    `a.`     at the start of the line so it doesn't get overwritten by the configuration above for text colors.*/
-     font-style: bold;
-     /*color: black;*/
-     color: light-dark(BLACK, WHITE);
-     background: #CCFFFF;
-     background: linear-gradient(180deg, rgba(204, 255, 255, 0.5) 0%, rgba(255, 204, 255, 0.75) 100%);
-     backdrop-filter: blur(10px);
-     -webkit-backdrop-filter: blur(10px);
-     border-radius: 16px;
-     border: 1px solid rgba(255, 255, 255, 0.3);
-     box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
-     &:hover {
-         background: #CCFFFF;
-         background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
-         color: light-dark(WHITE, BLACK)
-     }
-     &:disabled {
-         background: #a17588;
-         background: linear-gradient(0deg, rgba(161, 117, 136, 0) 0%, rgba(148, 187, 233, 0.65) 100%);
-     }
- }
-
- /* Fonts */
- @font-face {
-     font-family: "Cal Sans", sans-serif;
-     font-weight: 400;
-     font-style: normal;
- }
-
- @font-face {
-     font-family: "DM Sans";
-     font-style: normal;
-     font-display: swap;
-     font-weight: 400;
- }
-
- @font-face{
-     font-family: "Didact Gothic", sans-serif;
-     font-weight: 400;
-     font-style: normal;
+    }
+    a.glass-effect { /* Retain the `a.` at the start of the line so it doesn't get overwritten by the configuration above for text colors.*/
+        font-style: bold;
+        /*color: black;*/
+        color: light-dark(BLACK, WHITE);
+        background: #CCFFFF;
+        background: linear-gradient(180deg, rgba(204, 255, 255, 0.5) 0%, rgba(255, 204, 255, 0.75) 100%);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+        &:hover {
+            background: #CCFFFF;
+            background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
+            color: light-dark(WHITE, BLACK)
+        }
+        &:disabled {
+            background: #a17588;
+            background: linear-gradient(0deg, rgba(161, 117, 136, 0) 0%, rgba(148, 187, 233, 0.65) 100%);
+        }
  }
