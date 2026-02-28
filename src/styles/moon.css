@@ -64,7 +64,7 @@ footer{
      background: #9277d1;
      background: linear-gradient(180deg, rgba(146, 119, 209, 1) 0%, rgba(55, 0, 111, 1) 100%);
      text-align: center;
-     position: fixed;
+     /*position: fixed;*/
      left: 0;
      bottom: 0;
      width: 100%;
@@ -84,7 +84,7 @@ footer{
             color: transparent;
             background-clip: text;
         }
-     p{ /* Just so that the font work. */
+     p{ /* Just so that the font works. */
          font-style: bold;
          color:white; /* Standard text. */
          font-family: 'DM Sans';
@@ -148,37 +148,52 @@ footer{
  */
 
  /* Glass Efffect Button */
-    .button {
-        font-family: 'Cal Sans';
-        background-color: #FFFFFF;
-        border: none;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
 
-    }
-    a.glass-effect { /* Retain the `a.` at the start of the line so it doesn't get overwritten by the configuration above for text colors.*/
+    a.glass-effect { /* https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link Can only be applied to <a>.*/
+        font-family: 'Cal Sans';
         font-style: bold;
         /*color: black;*/
         color: light-dark(BLACK, WHITE);
+        font-size: 16px;
+         margin: 4px 2px;
+        padding: 15px 32px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
         background: #CCFFFF;
         background: linear-gradient(180deg, rgba(204, 255, 255, 0.5) 0%, rgba(255, 204, 255, 0.75) 100%);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-radius: 16px;
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        box-shadow: 0 0 30px 0px rgba(0, 0, 0, 0.3);
+        border: 2px solid rgba(255, 255, 255, 1);
+        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
         &:hover {
             background: #CCFFFF;
             background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
-            color: light-dark(WHITE, BLACK)
+            color: light-dark(WHITE, BLACK);
         }
-        &:disabled {
+    }
+        /*&:disabled{
+        a[href^= null]
+        a."glass-effect disabled"
+        #disabled*/
+        a.glass-disable{ /* for buttons that are unusable, temporary. */
+            font-family: 'Cal Sans';
+            font-size: 16px;
+            margin: 4px 2px;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 1);
+            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+
             background: #a17588;
             background: linear-gradient(0deg, rgba(161, 117, 136, 0) 0%, rgba(148, 187, 233, 0.65) 100%);
+            @media (prefers-color-scheme: light){background: linear-gradient(180deg, rgba(161, 117, 136, 0) 0%, rgba(148, 187, 233, 0.65) 100%);}
+            color: light-dark(dimgrey, gainsboro);
+            cursor:not-allowed;
         }
- }
+
