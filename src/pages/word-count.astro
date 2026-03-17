@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Markdown from '../components/Markdown.astro';
+import '../../src/styles/word-count.css';
 
 const explainer = `
 # H1 - Fonts: Cal Sans
@@ -14,18 +15,42 @@ MAKE THE UTILITIES NOW!
 
 An Astro website can go way beyond static pages - on the right platform.
 
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
+Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/).
 Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
 `;
 ---
 
 
 <Layout title="Welcome to Astro.">
-    <!--<Markdown content={explainer} class="mb-10 text-lg" />-->
-    <p>
-        <button href="/word-count" class="button glass-effect">Word Counter</button>
-    </p>
-    <p>
-        <button class="button glass-effect" disabled>World Times</button>
-    </p>
+    <h1>Word Counter</h1>
+
+    <!-- Textbox -->
+    <div class="word-container"> <!-- Everything placed here -->
+
+                <div class="output-container"> <!-- Where the info is placed. -->
+                    <div class="output"> <!-- Fancy edition. -->
+                        <p class="words">Words</p>
+                        <span data-word-count>0</span>
+                    </div>
+                    <div class="output">
+                        <p class="characters">Characters</p>
+                        <span data-character-count>0</span>
+                    </div>
+                    <div class="output">
+                        <p class="sentences">Sentences</p>
+                        <span data-sentence-count>0</span>
+                    </div>
+                    <div class="output">
+                        <p class="paragraphs">Paragraphs</p>
+                        <span data-paragraph-count>0</span>
+                    </div>
+                </div>
+
+                    <textarea placeholder="Enter your text here..."></textarea>
+    </div>
+
+    <script src="src/pages/functions/counter.js" defer></script>
+
 </Layout>
+
+

@@ -21,21 +21,23 @@
  }
 
 
- #f-container{ /* THANK THIS FOR EXISTANG https://github.com/PetoKrisa/frutiger-aero-css/blob/main/frutiger-aero.css */
- /* Center piece. */
- width: 960px;
- margin: auto;
- padding-bottom: 150px;
-
+ #f-container{
+        padding-top: 3rem;
+        padding-bottom: 5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        display: flex; /* For thinner screen resolutions.*/
  }
 
  .f-content{
-     padding: 30px 30px 50px 30px; /* Inside */
+     width: 960px;
+     margin: auto;
+     padding: 2rem; /* Inside */
      font-size: large;
      background: #ffffff;
      background: linear-gradient(0deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.5) 100%);
-     box-shadow: inset 0px -10px 30px 15px rgba(255, 255, 255, 0.5);
-     border-radius: 16px; /* Rounded corners. */
+     box-shadow: inset 0px 0px 25px 0px rgba(255, 255, 255, .5);
+     border-radius: 30px;
  }
 
  /* -- Website background colors. -- */
@@ -45,24 +47,25 @@
      text-align: center;
      @media (prefers-color-scheme: light){
          background: #9000ff;
-         background: linear-gradient(180deg,rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 1) 59%, rgba(144, 0, 255, 0) 100%);
+         background: linear-gradient(180deg,rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 0) 100%);
      }
  }
  body {
-     /* I do not know why I can't save a gradient as a variable nor use variables in the gradients. NEVERMIND I CAN USE var() LOL I FORGOT*/
      @media (prefers-color-scheme: dark){
-         background: #000000;
-         background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);
+         background:  var(--color-dark-purple);
+          background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2Fe%2Fe%2F5%2F417431-starry-sky-background-1920x1200-windows-7.jpg&f=1&nofb=1&ipt=26e5397e4213eca4769cd48e93f45c058d7cf422e836372a98d6390c595de7e9");
+         /*background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);*/
        }
        @media (prefers-color-scheme: light){
            background: #ECCFFF;
-           background: linear-gradient(0deg,rgba(236, 207, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+           background: linear-gradient(0deg,rgba(245, 245, 255, 1) 0%, rgba(236, 207, 255, 1) 50%, rgba(203, 125, 255, 1) 100%);
        }
      margin: 0px; /* Without this, it creates an 8px barrier around it. Not ideal as it ruins the gradient looking smooth! */
  }
 footer{
      background: #9277d1;
      background: linear-gradient(180deg, rgba(146, 119, 209, 1) 0%, rgba(55, 0, 111, 1) 100%);
+     padding: 15px 32px;
      text-align: center;
      /*position: fixed;*/
      left: 0;
@@ -99,12 +102,12 @@ footer{
       font-style: bold;
  }
  h2{
-     font-family: 'DM Sans';
+     font-family: 'Didact Gothic';
      letter-spacing: 1px;
       font-style: bold;
  }
  h3{
-     font-family: "Didact Gothic";
+     font-family: "DM Sans";
      letter-spacing: 0.5px;
       font-style: bold;
  }

@@ -1,0 +1,11 @@
+Ideas:
+cities + counties starting w/ (letter) - Not sure if possible.
+
+For CSS elements with multiple pixel entries (like padding):
+padding: Apx Bpx Cpx Dpx
+for each UPPERCASE letter being a number, it can work like:
+    padding-top: Apx;
+    padding-right: Bpx;
+    padding-bottom: Cpx;
+    padding-left: Dpx;
+So like the inverse of a DDR layout, haha.
