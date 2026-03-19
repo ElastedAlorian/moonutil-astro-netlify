@@ -4,9 +4,11 @@ import Markdown from '../components/Markdown.astro';
 
 const webtext = `
 # 404 - Webpage Not Found
-It seems that the webpage you are trying to reach is unavailable.
+It seems that the webpage you are trying to reach is unavailable or doesn't exist.
+Have you made a typo?.
 `;
 ---
+
 
 
 <Layout title="Welcome to Astro.">
@@ -14,4 +16,9 @@ It seems that the webpage you are trying to reach is unavailable.
     <p>
         <a href="/" class="glass-effect">Home</a>
     </p>
+    <style>
+        body{
+        "text-align: center;"
+        }
+    </style>
 </Layout>

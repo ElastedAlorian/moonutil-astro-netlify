@@ -11,7 +11,8 @@ export default defineConfig({
     integrations: [react()],
     adapter: netlify({
         devFeatures: {
-            environmentVariables: true
+            environmentVariables: true,
+            disable404Route: true
         }
     })
 });
