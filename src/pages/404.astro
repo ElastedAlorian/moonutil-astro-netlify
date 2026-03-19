@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Markdown from '../components/Markdown.astro';
+
+const webtext = `
+# 404 - Webpage Not Found
+It seems that the webpage you are trying to reach is unavailable.
+`;
+---
+
+
+<Layout title="Welcome to Astro.">
+    <Markdown content={webtext} class="mb-10 text-lg" />
+    <p>
+        <a href="/" class="glass-effect">Home</a>
+    </p>
+</Layout>

@@ -19,16 +19,26 @@ An Astro website can go way beyond static pages - on the right platform.
 Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
 Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
 `;
+
+const webtext = `
+# MoonUtil
+A bunch of utilities soon to be at your fingertips.
+# H1
+## H2
+### H3
+
+`;
 ---
 
 
 <Layout title="Welcome to Astro.">
-    <!--<Markdown content={explainer} class="mb-10 text-lg" />-->
+    <Markdown content={webtext} class="mb-10 text-lg" />
     <p>
-        <a href="/word-count" class="glass-effect">Word Counter</a>
+        <a href="/word-count" class="glass-effect">Word Counter</a> <a href="/world-times" id="disabled" class="glass-effect">World Times</a>
     </p>
+    <!-- Disabled Glass Button Template
     <p>
         <a class="glass-disable"  id="disabled">World Times</a>
-    </p>
+    </p>-->
 
 </Layout>

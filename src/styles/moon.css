@@ -169,7 +169,8 @@ footer{
         }
         a.header-seperator{
             font-family: 'Cal Sans';
-            color: light-dark(gainsboro, dimgrey);
+            /*color: light-dark(gainsboro, dimgrey);*/
+            color: inherited;
         }
 
 /*
@@ -197,7 +198,7 @@ footer{
         -webkit-backdrop-filter: blur(10px);
         border-radius: 16px;
         border: 2px solid rgba(255, 255, 255, 1);
-        box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 20%);
         &:hover {
             background: #CCFFFF;
             background: linear-gradient(180deg, rgba(204, 255, 255, 1) 0%, rgba(255, 204, 255, 1) 100%);
@@ -218,7 +219,7 @@ footer{
             display: inline-block;
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 1);
-            box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 10%);
 
             background: #a17588;
             background: linear-gradient(0deg, rgba(161, 117, 136, 0) 0%, rgba(148, 187, 233, 0.65) 100%);
