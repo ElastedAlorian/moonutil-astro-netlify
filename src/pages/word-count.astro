@@ -4,19 +4,10 @@ import Markdown from '../components/Markdown.astro';
 import '../../src/styles/word-count.css';
 
 const explainer = `
-# H1 - Fonts: Cal Sans
-## H2 - DM Sans
-### H3 - Didact Gothic
+## Word Counter!
+This handy word counter allows you to type or paste a prompt and receive handy information, primarily the amount of words! In addition, this allows you to view the amount of characters, sentences, and paragraphs. In addition to this, it allows you to view the average reading time of what you've written, and a score. This is primarily useful for those who need to write under a certain word amount, or want to test their writing skills! The sky's the limit, for instance, there are 90 words here!
 
-Most of the CSS should be complete. Reorganize it and then add some more text styling  too if needed.
-MAKE THE UTILITIES NOW!
 
-# Old Text
-
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/).
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
 `;
 ---
 
@@ -28,29 +19,47 @@ Any page or data can be rebuilt only when needed, without site visitors ever get
     <div class="word-container"> <!-- Everything placed here -->
 
                 <div class="output-container"> <!-- Where the info is placed. -->
-                    <div class="output"> <!-- Fancy edition. -->
+
+                    <div class="output row"> <!--Fancy edition-->
                         <p class="words">Words</p>
-                        <span data-word-count>0</span>
-                    </div>
-                    <div class="output">
+                        <span id="wordCount">0</span>
+                        </div>
+                    <div class="output row">
                         <p class="characters">Characters</p>
-                        <span data-character-count>0</span>
+                        <span id="characterCount">0</span>
                     </div>
-                    <div class="output">
+
+                    <div class="output row">
                         <p class="sentences">Sentences</p>
-                        <span data-sentence-count>0</span>
+                        <span id="sentenceCount">0</span>
                     </div>
-                    <div class="output">
+
+                    <div class="output row">
                         <p class="paragraphs">Paragraphs</p>
-                        <span data-paragraph-count>0</span>
+                        <span id="paragraphCount">0</span>
                     </div>
                 </div>
-
                     <textarea placeholder="Enter your text here..."></textarea>
-    </div>
+                <div class="output-container"> <!-- Misc Text Info. -->
 
+                        <div class="output row"> <!--Fancy edition-->
+                            <p>Reading Time</p>
+                            <span id="readingTime">0</span>
+                        </div>
+
+                        <div class="output row"> <!--Fancy edition-->
+                            <p>Readability Score</p>
+                                <p>
+                                    <a class="glass-effect" id="readability">Calculate</a>
+                                </p>
+                        </div>
+
+
+                </div>
+    </div>
     <script src="src/pages/functions/counter.js" defer></script>
 
+    <Markdown content={explainer}/>
 </Layout>
 
 

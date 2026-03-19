@@ -1,18 +1,7 @@
 * {
 margin: 0;
-padding: 0;
 box-sizing: border-box;
 }
-/*body {
-    font-family: Poppins;
-    background-color: #ffbf47;
-    color: #a09fa4;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5rem;
-}*/
 
 .word-container { /* Contains everything for the word counter. Without this, the top panel would be offset to the left and I have no clue how to fix this. The textbox however is kept to the center.*/
     width: 100%;
@@ -39,28 +28,28 @@ box-sizing: border-box;
     border-radius: 16px; /* Rounded corners. */
 
     background: #9000FF;
-    background: linear-gradient(180deg, rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 1) 100%);
-
+    /*background: linear-gradient(180deg, rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 1) 100%);*/
+    @media (prefers-color-scheme: light){
+        background: #9000ff;
+        background: linear-gradient(0deg, var(--color-white) 0%, var(--color-light-purple-2) 100%);
+    }
+    @media (prefers-color-scheme: dark){
+        background: #9000ff;
+        background: linear-gradient(0deg, var(--color-light-purple) 0%, var(--color-invisible) 100%);
+    }
+    box-shadow: inset 0px 0px 5px 1px rgba(255, 255, 255, .5);
 }
-.output { /*Category Base Styling*/
-    display: flex;
+.output { /*Category Base Styling -- Category + Number Text*/
     flex-direction: column;
     text-align: center;
-    border-radius: 16px; /* Rounded corners. */
-
-}
-.output p { /* Category Titles */
-    font-family: 'Cal Sans';
-    letter-spacing: 1px;
-    font-style: bold;
     color: light-dark(#242e3e, white);
-}
-.output span { /* Category Counter*/
-    color: light-dark(#242e3e, white);
-    font-size: 1.6rem;
-    font-family: 'Cal Sans';
-    letter-spacing: 3px;
-    font-style: bold;
+     font-family: 'Cal Sans';
+     letter-spacing: 1px;
+     font-style: bold;
+     /*font-size: 1.15rem;*/
+     span { /* Category Counter*/
+         font-size: 2.25rem;
+     }
 }
 
 textarea { /* Textbox */
@@ -69,18 +58,30 @@ textarea { /* Textbox */
     height: 250px;
     padding: 1rem;
     font-size: 1rem;
-    border-radius: inherit;
+    border-radius: 16px;
     outline: none;
     border: 0;
 
     color: light-dark(black, white);
     font-family: "Source Sans 3", sans-serif;
+
     background: #b6abff;
-    background: linear-gradient(0deg, rgba(182, 171, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
-    box-shadow: inset 0px 0px 25px 0px rgba(255, 255, 255, .5);
+    background: linear-gradient(0deg, #bef8f2 0%, var(--color-white) 70%);
+    box-shadow: inset 0px 0px 5px 5px rgba(255, 255, 255, .5);
+    @media (prefers-color-scheme: dark){
+        background: #9000ff;
+        background: linear-gradient(270deg, #5b7775 0%, var(--color-dark-purple) 100%);
+        font-weight: bold;
+    }
+
 }
 
+/* Adjustments to pre-existing elements just for this page.*/
 h1{
     text-align: center;
     font-size: 4rem;
+}
+a.glass-effect{
+    margin: 2px 2px;
+    padding: 7px 7px;
 }

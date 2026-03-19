@@ -12,6 +12,12 @@
      --color-lime-700: #219c4d;
      --color-black: #000000;
      --color-dark-purple: #37006F;
+     --color-white: #FFFFFF;
+     --color-light-purple: #C5B0FF;
+     --color-light-purple-2: #E2D9FF;
+     --color-purple: #9000FF;
+     --color-invisible: #FFFFFF00;
+
      /* For reference. */
      --iisu-gradient-1: rgba(139, 48, 237, 1);
      --iisu-gradient-2: rgba(78, 87, 250, 1);
@@ -41,27 +47,48 @@
  }
 
  /* -- Website background colors. -- */
- .header {;
+ .header {
      background: #37006F;
      background: linear-gradient(180deg,rgba(55, 0, 111, 1) 0%, rgba(55, 0, 111, 0) 100%);
-     text-align: center;
+     /*text-align: center;*/
      @media (prefers-color-scheme: light){
          background: #9000ff;
-         background: linear-gradient(180deg,rgba(144, 0, 255, 1) 0%, rgba(236, 207, 255, 0) 100%);
+         background: linear-gradient(0deg,var(--color-light-purple) 0%, rgba(236, 207, 255, 1) 100%);
      }
+     text-decoration: none;
+
+        @media (min-width: 20em) /*Shoutouts to https://codehim.com/html5-css3/image-and-text-side-by-side-html-css/*/
+        {
+                display: flex;
+                align-items: center;
+            img{
+                margin-right: 1em;
+                float: left; /* fallback */
+            }
+
+            /* clearfix for fallback */
+            .header::after,
+            {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
  }
+
  body {
      @media (prefers-color-scheme: dark){
          background:  var(--color-dark-purple);
-          background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2Fe%2Fe%2F5%2F417431-starry-sky-background-1920x1200-windows-7.jpg&f=1&nofb=1&ipt=26e5397e4213eca4769cd48e93f45c058d7cf422e836372a98d6390c595de7e9");
-         /*background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);*/
-       }
-       @media (prefers-color-scheme: light){
-           background: #ECCFFF;
-           background: linear-gradient(0deg,rgba(245, 245, 255, 1) 0%, rgba(236, 207, 255, 1) 50%, rgba(203, 125, 255, 1) 100%);
-       }
-     margin: 0px; /* Without this, it creates an 8px barrier around it. Not ideal as it ruins the gradient looking smooth! */
- }
+          /*background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapertag.com%2Fwallpaper%2Ffull%2Fe%2Fe%2F5%2F417431-starry-sky-background-1920x1200-windows-7.jpg&f=1&nofb=1&ipt=26e5397e4213eca4769cd48e93f45c058d7cf422e836372a98d6390c595de7e9");*/
+        background: linear-gradient(180deg, var(--color-black) 0%, var(--color-dark-purple) 100%);
+    }
+    @media (prefers-color-scheme: light){
+        background: linear-gradient(180deg,var(--color-white) 0%, var(--color-light-purple) 100%);
+    }
+    margin: 0px; /* Without this, it creates an 8px barrier around it. Not ideal as it ruins the gradient looking smooth! */
+    font-family: 'DM Sans'; /* So the font can be applied everywhere. */
+}
+
 footer{
      background: #9277d1;
      background: linear-gradient(180deg, rgba(146, 119, 209, 1) 0%, rgba(55, 0, 111, 1) 100%);
