@@ -1,3 +1,6 @@
+References:
+https://www.w3schools.com/js/js_examples.asp
+
 Ideas:
 cities + counties starting w/ (letter) - Not sure if possible.
 
